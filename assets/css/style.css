@@ -23,11 +23,21 @@ body {
 input {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    border-radius: 1vh;
+    border: none;
     outline: none;
-}
-button {
+    box-shadow: 3px 3px 3px rgba(37, 37, 37, 0.075)inset, -3px -3px 3px rgba(255, 255, 255, 0.5)inset;
 
 }
+input:focus {
+    box-shadow: 5px 5px 5px rgba(37, 37, 37, 0.075)inset, -5px -5px 5px rgba(255, 255, 255, 0.5)inset;
+}
+button {
+    border-radius: 1vh;
+    border: none;
+    outline: none;
+}
+
 /* Main header */
 header {
     position: fixed;
@@ -37,8 +47,8 @@ header {
     text-align: center;
     width: 100%;
     height: 20vh;
-    background-color: rgb(245, 245, 245);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 } 
 #city {
     color: grey;
@@ -54,12 +64,12 @@ header {
     font-size: 2.5vh;
     width: 50%;
     height: 5vh;
-
     padding: 1vh;
 
 }
 
 
+/* To do list */
 #to-do-list { 
     display: flex;
     flex-direction: column;
@@ -106,7 +116,12 @@ header {
 #add-list-item {
 
 }
-/* background color for neomorph styling */
+/* background color for main Header */
+input, button, header {
+    background-color: rgb(240, 240, 240);
+}
+
+/* background color for body */
 .card, .card-title, .container {
     background-color: rgb(240, 240, 241);
 }
