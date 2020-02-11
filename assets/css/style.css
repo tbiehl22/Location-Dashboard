@@ -1,0 +1,52 @@
+/* resets styling and adds Roboto as main font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+/* Some default styling rules for Neomorphism */
+.container, header, .card, .input {
+    background-color: lightgrey;
+}
+
+input {
+    border: none;
+    background-color: 
+}
+/* The main container */
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25vh repeat(4, auto);
+
+    width: 100vw;
+    height: 250vh;
+    background-color: lightgrey;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    background-color: grey;
+}
+#city {
+    font-weight: 400;
+    font-size: 3vh;
+}
+#time {
+    font-weight: 900;
+    font-size: 7vh;
+}
+#city-input {
+
+}
+
+.card {
+    margin: 0 5vh 5vh 5vh;
+    background-color: grey;
+}
