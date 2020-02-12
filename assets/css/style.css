@@ -6,7 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 /* Some default styling rules for Neomorphism */
-.container, header, .card, .input {
+.container, header, .card, .input, .card-mask {
     background-color: lightgrey;
 }
 
@@ -14,6 +14,15 @@ input {
     border: none;
     background-color: 
 }
+/* This masks cards that go past the header */
+.card-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 25vh;
+}
+
 /* The main container */
 .container {
     display: grid;
