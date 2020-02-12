@@ -91,7 +91,7 @@ header {
     border-radius: 3vh;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(255, 255, 255, 0.5);
 }
-.title {
+.card-title {
     margin-bottom: 1vh;
 }
 #list {
@@ -99,7 +99,7 @@ header {
 }
 
 
-
+/* When the user is using a tablet */
 @media only screen and (min-width: 768px) {
     .container {
         grid-template-columns: 1fr 1fr;
@@ -112,6 +112,8 @@ header {
         height: 200vh;
     }
 }
+
+/* When the user is using a desktop/laptop */
 @media only screen and (min-width: 1024px) {
     .container {
         grid-template-columns: 1fr 1fr;
