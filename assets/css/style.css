@@ -5,14 +5,30 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-/* Some default styling rules for Neomorphism */
-.container, header, .card, .input, .card-mask {
-    background-color: lightgrey;
+/* indent color */
+input, .card-mask {
+    background-color: rgb(240, 240, 240);
+}
+/* Background-color */
+.card, .container, .card-mask, header{
+    background-color: rgb(230, 230, 230);
 }
 
+form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
 input {
     border: none;
-    background-color: 
+    outline: none;
+    border-radius: 1vh;
+    height: 5vh;
+    width: 75%;
+    text-align: center;
+    font-size: 2vh;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329) inset, -3px -3px 3px rgba(255, 255, 255, 0.5) inset;
 }
 /* This masks cards that go past the header */
 .card-mask {
@@ -20,7 +36,7 @@ input {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 25vh;
+    height: 29vh;
 }
 
 /* The main container */
@@ -38,7 +54,6 @@ input {
     "card-4";
     gap: 4vh 4vh;
     padding: 4vh;
-    background-color: lightgrey;
 }
 
 /* Header */
@@ -50,6 +65,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(146, 146, 146);
+    box-shadow: 0 8px 6px -6px black;
 }
 #city {
     font-weight: 400;
@@ -65,7 +82,8 @@ header {
 
 /* Cards */
 .card {
-    background-color: grey;
+    border-radius: 3vh;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329), -3px -3px 3px rgba(255, 255, 255, 0.5);
 }
 #list {
     grid-area: list;
