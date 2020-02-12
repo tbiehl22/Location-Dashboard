@@ -50,7 +50,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: grey;
 }
 #city {
     font-weight: 400;
@@ -66,7 +65,7 @@ header {
 
 /* Cards */
 .card {
-    background-color: grey;
+    box-shadow: 10px 10px 8px 10px #888888;
 }
 #list {
     grid-area: list;
@@ -97,7 +96,7 @@ header {
         "card-3 list"
         "card-4 list";
         height: 200vh;
-        gap: 4vh 8vh;
+        gap: 4vh 4vh;
     }
     #list {
         position: sticky;
