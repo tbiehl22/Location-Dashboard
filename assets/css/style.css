@@ -17,21 +17,30 @@ input {
 /* The main container */
 .container {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 25vh repeat(4, auto);
-
     width: 100vw;
-    height: 250vh;
+    height: 300vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25vh repeat(5, 2fr);
+    grid-template-areas: 
+    "header"
+    "list"
+    "card-1"
+    "card-2"
+    "card-4";
+    gap: 4vh 4vh;
+    padding: 4vh;
     background-color: lightgrey;
 }
 
 /* Header */
 header {
+    grid-area: header;
+    position: sticky;
+    top: 4vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5vh;
     background-color: grey;
 }
 #city {
@@ -46,7 +55,44 @@ header {
 
 }
 
+/* Cards */
 .card {
-    margin: 0 5vh 5vh 5vh;
     background-color: grey;
+}
+#list {
+    grid-area: list;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 25vh repeat(3, 2fr);
+        grid-template-areas: 
+        "header header"
+        "list list"
+        "card-1 card-2"
+        "card-4 .";
+        height: 200vh;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 25vh repeat(4, 2fr);
+        grid-template-areas: 
+        "header list"
+        "card-1 list"
+        "card-2 list"
+        "card-3 list"
+        "card-4 list";
+        height: 200vh;
+        gap: 4vh 8vh;
+    }
+    #list {
+        position: sticky;
+        top: 4vh;
+        height: calc(100vh - 8vh);
+    }
 }
