@@ -6,7 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 /* indent color */
-input, .card-mask {
+header, input, .card-mask {
     background-color: rgb(240, 240, 240);
 }
 /* Background-color */
@@ -65,8 +65,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(146, 146, 146);
-    box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 #city {
     font-weight: 400;
@@ -82,8 +81,18 @@ header {
 
 /* Cards */
 .card {
+    display: flex;
+    flex-direction: column;
+    padding: 4vh;
+    align-items: center;
+    justify-self: center;
+    width: 98%;
+    height: 100%;
     border-radius: 3vh;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329), -3px -3px 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(255, 255, 255, 0.5);
+}
+.title {
+    margin-bottom: 1vh;
 }
 #list {
     grid-area: list;
