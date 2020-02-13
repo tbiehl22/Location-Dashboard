@@ -86,13 +86,17 @@ header {
     padding: 4vh;
     align-items: center;
     justify-self: center;
-    width: 98%;
+    width: calc(100% - 1vmax);
     height: 100%;
     border-radius: 3vh;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 .card-title {
     margin-bottom: 1vh;
+    text-align: center;
+    font-weight: 300;
+    font-size: 3vh;
+
 }
 #list {
     grid-area: list;
@@ -107,8 +111,8 @@ header {
         grid-template-areas: 
         "header header"
         "list list"
-        "card-1 card-2"
-        "card-4 .";
+        "card-1 card-1"
+        "card-4 card-4";
         height: 200vh;
     }
 }
@@ -131,5 +135,6 @@ header {
         position: sticky;
         top: 4vh;
         height: calc(100vh - 8vh);
+        width: 100%;
     }
 }
