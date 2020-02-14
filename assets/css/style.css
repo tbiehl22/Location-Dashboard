@@ -5,15 +5,10 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-/* indent color */
-header, input, .card-mask {
+/* Background color */
+header, input, .card-mask, .container, .card, button {
     background-color: rgb(240, 240, 240);
 }
-/* Background-color */
-.card, .container, .card-mask, header{
-    background-color: rgb(240, 240, 240);
-}
-
 form {
     display: flex;
     flex-direction: row;
@@ -40,9 +35,23 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-input:focus {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075) inset, -5px -5px 5px rgba(255, 255, 255, 0.5) inset;
+/* Button Styling */
+button {
+    border: none;
+    border-radius: 1vh;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075), -3px -3px 3px rgba(255, 255, 255, 0.5);
 }
+button:active {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075)inset, -3px -3px 3px rgba(255, 255, 255, 0.5)inset;
+}
+/* Remove annoying blue outline from buttons and other stuff */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+outline: none;
+}
+
 /* This masks cards that go past the header */
 .card-mask {
     position: fixed;
@@ -89,6 +98,15 @@ header {
     font-size: 7vh;
 }
 #city-input {
+    width: 25%;
+    margin-right: 3%;
+}
+#submitBtn {
+    box-sizing: border-box;
+    width: 15%;
+    font-size: 2vh;
+}
+#submitBtn:active {
 
 }
 
