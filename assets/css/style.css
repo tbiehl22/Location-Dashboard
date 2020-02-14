@@ -11,7 +11,7 @@ header, input, .card-mask {
 }
 /* Background-color */
 .card, .container, .card-mask, header{
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
 }
 
 form {
@@ -24,11 +24,24 @@ input {
     border: none;
     outline: none;
     border-radius: 1vh;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     height: 5vh;
     width: 75%;
     text-align: center;
     font-size: 2vh;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329) inset, -3px -3px 3px rgba(255, 255, 255, 0.5) inset;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075) inset, -3px -3px 3px rgba(255, 255, 255, 0.5) inset;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+input:focus {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075) inset, -5px -5px 5px rgba(255, 255, 255, 0.5) inset;
 }
 /* This masks cards that go past the header */
 .card-mask {
@@ -89,7 +102,7 @@ header {
     width: calc(100% - 1vmax);
     height: 100%;
     border-radius: 3vh;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075), -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 .card-title {
     margin-bottom: 1vh;
