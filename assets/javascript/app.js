@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
-  $('#submitBtn').click(function () {
-    event.preventDefault()
 
-    var degreeSymbol = String.fromCharCode(176)
+  $('#submitBtn').click(function (event) {
+    event.preventDefault();
+
+    var degreeSymbol = String.fromCharCode(176);
     var city = $('#city-input').val();
     console.log(city);
 
@@ -12,6 +13,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      console.log(response);
 
       var condition = response.weather[0].main;
       var city = response.name;
@@ -24,24 +26,68 @@ $(document).ready(function () {
       };
 
       $("#city").html(city)
-      $(".weather").html("<div class=\"degrees\">Temp: " + fahrenheitConverter(temp) + degreeSymbol + "f</div>")
-      $(".weather").append("<div class=\"feels-like\">Feels Like: " + fahrenheitConverter(feelsLike) + degreeSymbol + "</div>")
-      $(".weather").append("<div class=\"condition\">Condition: " + condition + "</div>")
-      $(".weather").append("<div class=\"wind-speed\"> Wind Speed: " + Math.round(windSpeed) + "mph</div>")
+      $(".weather").html("<div class=\"degrees\">Temp: " + fahrenheitConverter(temp) + degreeSymbol + "f</div>");
+      $(".weather").append("<div class=\"feels-like\">Feels Like: " + fahrenheitConverter(feelsLike) + degreeSymbol + "</div>");
+      $(".weather").append("<div class=\"condition\">Condition: " + condition + "</div>");
+      $(".weather").append("<div class=\"wind-speed\"> Wind Speed: " + Math.round(windSpeed) + "mph</div>");
 
-      
+      $('#city-input').val("");
     });
   });
 
-  //To Do List
-  $('#list-button').click(function(){
-    event.preventDefault()
 
+  function printToScreen(task, toDoId) {
+    var toDoHtml = $("<p>");
+    
+    toDoHtml.attr("id", toDoId);
+    toDoHtml.text(task);
+    
+    // Close Button for ToDo
+    var closeButton = $("<button>");
+    closeButton.attr("data-to-do", toDoId);
+    closeButton.addClass("checkbox");
+    closeButton.text("✓");
+    
+    toDoHtml = toDoHtml.prepend(closeButton);
+    $(".todo-list").append(toDoHtml);
+    
+  };
+  var toDoCount = 0;
+  
+  Object.entries(localStorage).forEach(function (value) {
+    printToScreen(value[1], value[0])
+    toDoCount++;
+    
+  })
+  //To Do List
+  // Add Task
+  $('#list-button').click(function (event) {
+    event.preventDefault();
+    
+    
+    // Input text for ToDo
     var task = $('#list-input').val().trim();
-    var toDoHtml = $("<p>")
-    var closeButton = $("<button>")
+    var toDoId = "item-" + toDoCount;
+    while (localStorage.getItem(toDoId)) {
+      toDoCount ++;
+      toDoId = "item-" + toDoCount;
+    }
+    printToScreen(task, toDoId);
+    $('#list-input').val("")
+    localStorage.setItem(toDoId, task)
+    toDoCount++;
 
   })
+
+  // Remove Task
+  $(document.body).on("click", ".checkbox", function () {
+
+    var toDoId = $(this).attr("data-to-do");
+    $('#' + toDoId).remove()
+    localStorage.removeItem(toDoId)
+
+  })
+
 
 
   // Time Updater
