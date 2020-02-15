@@ -72,9 +72,9 @@ outline: none;
 .container {
     display: grid;
     width: 100vw;
-    height: 300vh;
+    height: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 25vh repeat(5, 2fr);
+    grid-template-rows: 25vh repeat(4);
     grid-template-areas: 
     "header"
     "list"
@@ -123,7 +123,6 @@ header {
     align-items: center;
     justify-self: center;
     width: calc(100% - 1vmax);
-    height: 100%;
     border-radius: 3vh;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075), -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
@@ -131,7 +130,7 @@ header {
     margin-bottom: 1vh;
     text-align: center;
     font-weight: 300;
-    font-size: 3vh;
+    font-size: 5vh;
 
 }
 .card-main {
@@ -148,6 +147,9 @@ header {
 #list {
     grid-area: list;
 }
+.list-form {
+    margin-bottom: 2vh;
+}
 #list-input {
     flex: 3;
     margin-right: 3%;
@@ -160,15 +162,21 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .list-item {
     display: flex;
+    height: 5vh;
     flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
 }
 .checkbox {
     display: flex;
     flex-direction: row;
-    width: 25px;
+    margin-right: 2%;
+    width: 5vh;
+    height: 5vh;
     font-size: 2vh;
 }
 
@@ -178,13 +186,13 @@ header {
 @media only screen and (min-width: 768px) {
     .container {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 25vh repeat(3, 2fr);
+        grid-template-rows: 25vh repeat(3);
         grid-template-areas: 
         "header header"
         "list list"
         "card-1 card-1"
         "card-4 card-4";
-        height: 200vh;
+        height: min(100vh, 100%);
     }
 }
 
@@ -192,20 +200,19 @@ header {
 @media only screen and (min-width: 1024px) {
     .container {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 25vh repeat(4, 2fr);
+        grid-template-rows: 25vh repeat(3);
         grid-template-areas: 
         "header list"
         "card-1 list"
         "card-2 list"
         "card-3 list"
         "card-4 list";
-        height: 200vh;
+        height: min(100vh, 100%);
         gap: 4vh 4vh;
     }
     #list {
         position: sticky;
         top: 4vh;
-        height: calc(100vh - 8vh);
         width: 100%;
     }
 }
