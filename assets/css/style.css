@@ -134,6 +134,15 @@ header {
     font-size: 3vh;
 
 }
+.card-main {
+}
+.weather {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 2.5em;
+    font-size: 2vh;
+}
 
 /* List */
 #list {
@@ -144,6 +153,16 @@ header {
     margin-right: 3%;
 }
 #list-button {
+    flex: 1;
+    font-size: 2vh;
+}
+.todo-list {
+    display: flex;
+    flex-direction: column;
+}
+.checkbox {
+    display: flex;
+    flex-direction: row;
     flex: 1;
     font-size: 2vh;
 }
