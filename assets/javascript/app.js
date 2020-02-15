@@ -45,13 +45,17 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       $('.location-image').empty()
-      
-      // var random = Math.floor(Math.random() * 10);
       var image = $('<img>')
+      var text = $('<p>')
       var imageSrc = response.urls.full
+      var credit = response.user.name
       image.attr("src", imageSrc)
       image.attr("width", "100%")
+      text.addClass("credit-text")
+      text.text(credit)
       $('.location-image').append(image)
+      $('.location-image').append(text)
+
     });
   });
 
