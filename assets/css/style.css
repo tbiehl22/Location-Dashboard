@@ -96,6 +96,7 @@ header {
     align-items: center;
     padding: 4vh;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    z-index: 1000000;
 }
 #city {
     font-weight: 400;
@@ -137,10 +138,10 @@ header {
 .card-main {
 }
 .weather {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     text-align: center;
-    line-height: 2.5em;
+    line-height: 2.5;
     font-size: 2vh;
 }
 
@@ -170,6 +171,10 @@ header {
     flex-direction: row;
     width: 25px;
     font-size: 2vh;
+}
+.condition-icon{
+    width: 100%;
+    filter: brightness(0.25);
 }
 
 

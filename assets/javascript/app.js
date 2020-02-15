@@ -21,15 +21,17 @@ $(document).ready(function () {
       var feelsLike = response.main.feels_like;
       var windSpeed = response.wind.speed * 2.237;
       var humidity = response.main.humidity
+      var icon = response.weather[0].icon;
 
       function fahrenheitConverter(something) {
         return Math.floor((something - 273.15) * 1.80 + 32)
       };
 
       $("#city").html(city)
+      $(".image-title").text("Image From " + city)
       $(".weather").html("<div class=\"degrees\">Temp: " + fahrenheitConverter(temp) + degreeSymbol + "f</div>");
       $(".weather").append("<div class=\"feels-like\">Feels Like: " + fahrenheitConverter(feelsLike) + degreeSymbol + "</div>");
-      $(".weather").append("<div class=\"condition\">Condition: " + condition + "</div>");
+      $(".weather").append("<div class=\"condition\">Condition: " + condition + "</div><img class=\"condition-icon\" src=\"http://openweathermap.org/img/wn/" + icon + "@2x.png\">");
       $(".weather").append("<div class=\"wind-speed\"> Wind Speed: " + Math.round(windSpeed) + "mph</div>");
       $(".weather").append("<div class=\"humididty\"> Humidity: " + humidity + "%</div>");
 
