@@ -65,7 +65,7 @@ $(document).ready(function () {
     
     toDoHtml.addClass("list-item")
     toDoHtml.attr("id", toDoId);
-    toDoHtml.text(task);
+    toDoHtml.html("<p class=\"item-names\">" + task + "</p>");
     
     // Close Button for ToDo
     var closeButton = $("<button>");
