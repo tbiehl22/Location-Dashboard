@@ -20,6 +20,7 @@ $(document).ready(function () {
       var temp = response.main.temp;
       var feelsLike = response.main.feels_like;
       var windSpeed = response.wind.speed * 2.237;
+      var humidity = response.main.humidity
 
       function fahrenheitConverter(something) {
         return Math.floor((something - 273.15) * 1.80 + 32)
@@ -30,8 +31,27 @@ $(document).ready(function () {
       $(".weather").append("<div class=\"feels-like\">Feels Like: " + fahrenheitConverter(feelsLike) + degreeSymbol + "</div>");
       $(".weather").append("<div class=\"condition\">Condition: " + condition + "</div>");
       $(".weather").append("<div class=\"wind-speed\"> Wind Speed: " + Math.round(windSpeed) + "mph</div>");
+      $(".weather").append("<div class=\"humididty\"> Humidity: " + humidity + "%</div>");
 
       $('#city-input').val("");
+    });
+
+    // photo api
+    var queryURL2 = "https://api.unsplash.com/photos/random/?client_id=eVbmUHA7GU426U0BE8pSV4E9V9SzHvGktrODKY3ePn8&query=" + city
+    console.log(queryURL2);
+
+    $.ajax({
+      url: queryURL2,
+      method: "GET"
+    }).then(function (response) {
+      $('.location-image').empty()
+      
+      // var random = Math.floor(Math.random() * 10);
+      var image = $('<img>')
+      var imageSrc = response.urls.full
+      image.attr("src", imageSrc)
+      image.attr("width", "100%")
+      $('.location-image').append(image)
     });
   });
 
@@ -39,6 +59,7 @@ $(document).ready(function () {
   function printToScreen(task, toDoId) {
     var toDoHtml = $("<p>");
     
+    toDoHtml.addClass("list-item")
     toDoHtml.attr("id", toDoId);
     toDoHtml.text(task);
     
@@ -88,7 +109,7 @@ $(document).ready(function () {
 
   })
 
-
+  
 
   // Time Updater
   var currentTime = Date.now();
