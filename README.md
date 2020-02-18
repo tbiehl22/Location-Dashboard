@@ -1,4 +1,4 @@
-# Project1 - Location based Application
+# Project1 - Location Based Application
 
 Deployed website - https://tbiehl22.github.io/project1/
 
