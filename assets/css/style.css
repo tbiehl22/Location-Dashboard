@@ -66,7 +66,7 @@ outline: none;
     left: 0;
     width: 100vw;
     height: 29vh;
-    z-index: 999998;
+    z-index: 10;
 }
 
 /* The main container */
@@ -97,7 +97,8 @@ header {
     align-items: center;
     padding: 4vh;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
-    z-index: 1000000;
+    z-index: 10;
+
 }
 #city {
     font-weight: 400;
@@ -144,11 +145,16 @@ header {
     line-height: 2.5;
     font-size: 2vh;
 }
-
+img {
+    border-radius: 3vh;
+}
+.credit-text {
+    text-align: center;
+}
 /* List */
 #list {
     grid-area: list;
-    z-index: 999999;
+    z-index: 5;
 }
 .list-form {
     margin-bottom: 2vh;
@@ -199,7 +205,9 @@ header {
         "list list"
         "card-1 card-1"
         "card-4 card-4";
-        height: min(100vh, 100%);
+        min-height: 100vh;
+        height: 100%;
+        
     }
 }
 
@@ -207,19 +215,20 @@ header {
 @media only screen and (min-width: 1024px) {
     .container {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 25vh repeat(3);
+        grid-template-rows: 25vh repeat(2);
         grid-template-areas: 
         "header list"
         "card-1 list"
         "card-2 list"
-        "card-3 list"
-        "card-4 list";
-        height: min(100vh, 100%);
+        "card-3 list";
+        min-height: 100vh;
+        height: 100%;
         gap: 4vh 4vh;
     }
     #list {
         position: sticky;
         top: 4vh;
         width: 100%;
+        z-index: 20;
     }
 }
