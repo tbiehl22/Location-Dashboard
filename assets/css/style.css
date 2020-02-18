@@ -66,6 +66,7 @@ outline: none;
     left: 0;
     width: 100vw;
     height: 29vh;
+    z-index: 999998;
 }
 
 /* The main container */
@@ -96,6 +97,7 @@ header {
     align-items: center;
     padding: 4vh;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    z-index: 1000000;
 }
 #city {
     font-weight: 400;
@@ -136,16 +138,17 @@ header {
 .card-main {
 }
 .weather {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     text-align: center;
-    line-height: 2.5em;
+    line-height: 2.5;
     font-size: 2vh;
 }
 
 /* List */
 #list {
     grid-area: list;
+    z-index: 999999;
 }
 .list-form {
     margin-bottom: 2vh;
@@ -178,6 +181,10 @@ header {
     width: 5vh;
     height: 5vh;
     font-size: 2vh;
+}
+.condition-icon{
+    width: 100%;
+    filter: brightness(0.25);
 }
 
 
