@@ -65,7 +65,7 @@ outline: none;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 29vh;
+    height: 28vh;
     z-index: 10;
 }
 
@@ -90,8 +90,8 @@ outline: none;
 header {
     grid-area: header;
     position: sticky;
-    top: 4vh;
     display: flex;
+    top: 4vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
